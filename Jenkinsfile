@@ -37,18 +37,15 @@ pipeline {
 
         // ===== BACKEND DEPLOY =====
         stage('Deploy Backend to Tomcat') {
-            steps {
-                bat """
-                if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice.war" (
-                    del /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice.war"
-                )
-                if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice" (
-                    rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice"
-                )
-                copy "BACKENDPRACTICE\\target\\*.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice.war"
-                """
-            }
-        }
+        steps {
+        bat '''
+            if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice.war" (del /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice.war" )
+            if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice" (rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice" )
+            copy "BACKENDPRACTICE\\Actor\\target\\*.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice.war"
+        '''
+      }
+     }
+
 
     }
 
