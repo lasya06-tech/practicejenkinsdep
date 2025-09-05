@@ -1,0 +1,175 @@
+/* ===== Gen Z Theme ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
+  background-size: 300% 300%;
+  animation: gradientMove 12s ease infinite;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.actor-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: #444;
+  margin-top: 25px;
+}
+
+/* ===== Message Banners ===== */
+.message-banner {
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.message-banner.success {
+  background: rgba(0, 255, 128, 0.2);
+  color: #00c853;
+  border: 1px solid #00c853;
+}
+
+.message-banner.error {
+  background: rgba(255, 77, 77, 0.2);
+  color: #ff1744;
+  border: 1px solid #ff1744;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Form ===== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.form-grid input,
+.form-grid select {
+  padding: 12px 15px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  transition: 0.3s ease;
+}
+
+.form-grid input:focus,
+.form-grid select:focus {
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 12px rgba(255, 0, 150, 0.4);
+  transform: scale(1.03);
+}
+
+/* ===== Buttons ===== */
+.btn-group,
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.btn-blue { background: linear-gradient(45deg, #36d1dc, #5b86e5); }
+.btn-green { background: linear-gradient(45deg, #11998e, #38ef7d); }
+.btn-red { background: linear-gradient(45deg, #ff0844, #ffb199); }
+.btn-gray { background: linear-gradient(45deg, #757f9a, #d7dde8); color: #222; }
+
+button:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Table ===== */
+.table-wrapper {
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+}
+
+thead {
+  background: linear-gradient(45deg, #ff6a00, #ee0979);
+  color: white;
+}
+
+thead th {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+tbody tr {
+  background: rgba(255, 255, 255, 0.6);
+  transition: 0.3s;
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.01);
+}
+
+td {
+  padding: 12px;
+  font-size: 14px;
+}
