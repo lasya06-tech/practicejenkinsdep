@@ -16,13 +16,13 @@ pipeline {
         // ===== FRONTEND DEPLOY =====
         stage('Deploy Frontend to Tomcat') {
             steps {
-                bat '''
+                bat """
                 if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\frontendlasya" (
                     rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\frontendlasya"
                 )
                 mkdir "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\frontendlasya"
-                xcopy /E /I /Y FRONTEND\lasya\dist\* "C:\Program Files\Apache Software Foundation\Tomcat 10.1\webapps\frontendlasya"
-                '''
+                xcopy /E /I /Y FRONTEND\\lasya\\dist\\* "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\frontendlasya"
+                """
             }
         }
 
@@ -38,7 +38,7 @@ pipeline {
         // ===== BACKEND DEPLOY =====
         stage('Deploy Backend to Tomcat') {
             steps {
-                bat '''
+                bat """
                 if exist "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice.war" (
                     del /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice.war"
                 )
@@ -46,7 +46,7 @@ pipeline {
                     rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice"
                 )
                 copy "BACKENDPRACTICE\\target\\*.war" "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\backendpractice.war"
-                '''
+                """
             }
         }
 
