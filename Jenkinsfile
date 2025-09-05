@@ -29,7 +29,7 @@ pipeline {
         // ===== BACKEND BUILD =====
         stage('Build Backend') {
             steps {
-                dir('BACKENDPRACTICE') {
+                dir('BACKENDPRACTICE/Actor') {
                     bat 'mvn clean package'
                 }
             }
