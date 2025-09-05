@@ -21,7 +21,7 @@ pipeline {
                     rmdir /S /Q "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\frontendlasya"
                 )
                 mkdir "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\frontendlasya"
-                xcopy /E /I /Y FRONTEND\\lasya\\build\\* "C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1\\webapps\\frontendlasya"
+                xcopy /E /I /Y FRONTEND\lasya\dist\* "C:\Program Files\Apache Software Foundation\Tomcat 10.1\webapps\frontendlasya"
                 '''
             }
         }
